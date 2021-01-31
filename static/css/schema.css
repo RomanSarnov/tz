@@ -1,0 +1,49 @@
+.input-new-schema {
+    width: 540px;
+    height: 38px;
+    margin-top: 5px;
+}
+
+.label-input-new-schema {
+    margin-right: 30px;
+    display: block;
+}
+
+
+.input-new-column-name {
+    width: 334px;
+    height: 38px;
+    margin-top: 5px;
+
+}
+
+
+.input-new-column-type {
+    width: 265px;
+    height: 38px;
+    margin-top: 5px;
+}
+
+.name-col {
+    margin-right: 50px
+}
+
+.input-new-column-order {
+    width: 152px;
+    height: 38px;
+    margin-top: 5px;
+
+}
+
+.column-row {
+    margin-top: 25px;
+    padding-left: 10px
+}
+
+.add-column-block {
+    border: 1px solid #CCCCCC;
+    margin-top: 45px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-left: 35px
+}
