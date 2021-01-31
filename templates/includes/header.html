@@ -1,0 +1,18 @@
+<header>
+    <div class="container-fluid" style="padding-left: 65px; margin-top: 16px">
+        <div class="row">
+            <div class="col-1">
+                <h5>FakeCSV</h5>
+            </div>
+            <div class="col-9">
+                Schemas
+            </div>
+            <div class="col-1">
+                Hello, {{ request.user.username|default:"username" }}
+            </div>
+            <div class="col-1">
+                <a href="{% url 'logout' %}" style="text-decoration: none;color: rgba(0, 0, 0, 0.3)">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
