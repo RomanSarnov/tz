@@ -7,4 +7,4 @@ class SchemasView(LoginRequiredMixin, View):
     """Schemas list"""
 
     def get(self, request):
-        return render(request, 'schema/schemas.html', context={})
+        return render(request, 'schema/add-schemas.html', context={})
