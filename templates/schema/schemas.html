@@ -1,10 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Schemas</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/schema.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
 </head>
 <body>
+{% include 'includes/header.html' %}
+<div class="container-fluid">
+    <div class="row" style="margin-top: 30px; padding-left: 65px">
+        <div class="col-1">
+            <h5>Data Schemas</h5>
+        </div>
 
+    </div>
+    <div class="row" style="margin-top: 15px; padding-left: 65px">
+        <div class="col-8">
+                        <button class="btn btn-success" type="button">New Schema</button>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Modified</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><a href="#">name scheme</a></td>
+                    <td>2020-03-16</td>
+                    <td><a href="#">Edit scheme</a> <a href="#" style="color: #D9534F">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

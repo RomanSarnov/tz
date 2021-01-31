@@ -52,3 +52,12 @@
     width: 84px;
     height: 38px;
 }
+
+table {
+   border-collapse: separate;
+   border-spacing: 10px 20px;
+}
+table {
+   border-collapse: separate;
+   border-spacing: 10px;
+}
