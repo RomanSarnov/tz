@@ -18,6 +18,9 @@
             <button class="btn btn-success new-schema-button" type="button"><a class="new-schema-href"
                                                                                href="#">Generate
                 data</a></button>
+            <input type="text" style="width: 84px; height: 38px; float: right; margin-right: 10px">
+            <label style="float: right; margin-right: 10px; margin-top: 5px">Rows</label>
+
             <h5>Data Sets</h5>
             <table class="table table-bordered">
                 <thead>
@@ -29,15 +32,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for schema in schemas %}
+                {% for set in schema.sets.all %}
                     <tr>
                         <th scope="row" class="new-schema-td-th">{{ forloop.counter }}</th>
-                        <td scope="col" class="new-schema-td-th"><a class="new-schema-href" href="#"
-                                                                    style="color: #0275D8">{{ schema.name }}</a></td>
-                        <td class="new-schema-td-th">{{ schema.created|date:"Y-m-d" }}</td>
+                        <td scope="col" class="new-schema-td-th">
+                            <div>{{ set.created|date:"Y-m-d" }}</div>
+                        </td>
+                        <td class="new-schema-td-th">
+                            <div style="display: inline-block; font-size: 12px;{% if set.get_status_display == 'Ready' %}background: #5CB85C;{% else %}background: #999999;
+                            {% endif %};padding: 4px; border-radius: 5px; color: white">{{ set.get_status_display }}</div>
+                        </td>
                         <td class="new-schema-td-th">
                             <div class="row">
-                                <div class="col-4"><a class="new-schema-href" href="#" style="color: #0275D8">Download</a></div>
+                                <div class="col-4"><a class="new-schema-href"
+                                                      {% if set.get_status_display == 'Ready' %}href="{{ set.link_download }}"{% endif %}
+                                                      style="color: #0275D8">{% if set.get_status_display == 'Ready' %}
+                                    Download{% endif %}</a></div>
                             </div>
                         </td>
 

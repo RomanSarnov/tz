@@ -41,3 +41,4 @@ class SchemaSet(models.Model):
     created = models.DateField(auto_now_add=True)
     status = models.CharField(choices=STATUS, max_length=15)
     link_download = models.CharField(max_length=248, blank=True)
+

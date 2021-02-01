@@ -31,4 +31,4 @@ class SchemasDeleteView(LoginRequiredMixin, View):
 class SchemaSetsView(LoginRequiredMixin, View):
     def get(self, requests, pk):
         schema = SchemaData.objects.prefetch_related('sets').get(pk=pk)
-        return redirect('schemas')
+        return render(requests, 'schema/data-sets.html', context={'schema': schema})
