@@ -129,11 +129,11 @@
         div.style.marginTop = '25px'
         div.innerHTML = `<div class="col-2 name-col">
             <label class="label-input-new-schema">Column name</label>
-            <input type="text" class="input-new-column-name" required id="name${columns.id}" value="${nameData.value}">
+            <input type="text" class="input-new-column-name" required id="name${columns.id}" value="${nameData.value}" readonly>
         </div>
         <div class="col-2 type-col-new">
             <label class="label-input-new-schema">Type</label>
-            <select class="input-new-column-type" name="type" id="type${columns.id}" value="${typeData.value}">
+            <select class="input-new-column-type" name="type" id="type${columns.id}" value="${typeData.value}" readonly">
                 <option value='Job'>Job</option>
                 <option value="Domain name">Domain name</option>
                 <option value="Phone Number">Phone Number</option>
@@ -146,7 +146,8 @@
             <input type="number" class="input-new-column-order" value="${columns.id}">
         </div>`;
         columns.after(div)
-        if (typeInput.value === "Integer") {
+        let type0 = document.querySelector(`#type${columns.id}`)
+        if (type0.value === "Integer") {
             let typeCol = document.querySelector('.type-col-new')
             let divTo = document.createElement('div')
             divTo.className = 'col-1 abc'

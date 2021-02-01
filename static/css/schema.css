@@ -53,11 +53,20 @@
     height: 38px;
 }
 
-table {
-   border-collapse: separate;
-   border-spacing: 10px 20px;
+
+.new-schema-button {
+    margin-bottom: 15px;
+    float: right;
+
 }
-table {
-   border-collapse: separate;
-   border-spacing: 10px;
+
+.new-schema-href {
+    text-decoration: none;
+    color: white;
+
+}
+.new-schema-href:hover {
+    text-decoration: none;
+    color: white;
+
 }

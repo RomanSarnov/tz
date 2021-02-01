@@ -1,17 +1,34 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
+from schemas.models import SchemaColumn, SchemaSet, SchemaData
 
 
-class SchemasView(LoginRequiredMixin, View):
+class CreateSchemaView(LoginRequiredMixin, View):
     """Schemas list"""
 
     def get(self, request):
         return render(request, 'schema/add-schemas.html', context={})
 
 
-class SchemView(View):
+class SchemasView(LoginRequiredMixin, View):
     """Schemas list"""
 
     def get(self, request):
-        return render(request, 'schema/schemas.html', context={})
+        schemas = SchemaData.objects.all()
+        for i in schemas:
+            print(i.modified)
+        return render(request, 'schema/schemas.html', context={'schemas': schemas})
+
+
+class SchemasDeleteView(LoginRequiredMixin, View):
+    def get(self, requests, pk):
+        schema = SchemaData.objects.get(pk=pk)
+        schema.delete()
+        return redirect('schemas')
+
+
+class SchemaSetsView(LoginRequiredMixin, View):
+    def get(self, requests, pk):
+        schema = SchemaData.objects.prefetch_related('sets').get(pk=pk)
+        return redirect('schemas')
