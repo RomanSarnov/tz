@@ -68,5 +68,18 @@
 .new-schema-href:hover {
     text-decoration: none;
     color: white;
+}
 
+.new-header-td-th {
+    height: 50px;
+    width: 115.81px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.new-schema-td-th {
+    height: 50px;
+    width: 289.51px;
+    display: table-cell;
+    vertical-align: middle;
 }

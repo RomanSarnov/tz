@@ -14,16 +14,17 @@
 <div class="container-fluid">
     <div class="row" style="margin-top: 15px; padding-left: 65px">
         <div class="col-9">
+
             <button class="btn btn-success new-schema-button" type="button"><a class="new-schema-href"
-                                                                               href="{% url 'create_schema' %}">New
-                Schema</a></button>
-            <h5>Data Schemas</h5>
+                                                                               href="#">Generate
+                data</a></button>
+            <h5>Data Sets</h5>
             <table class="table table-bordered">
                 <thead>
                 <tr>
                     <th scope="col" class="new-header-td-th">#</th>
-                    <th scope="col" class="new-schema-td-th">Title</th>
-                    <th scope="col" class="new-schema-td-th">Modified</th>
+                    <th scope="col" class="new-schema-td-th">Created</th>
+                    <th scope="col" class="new-schema-td-th">Status</th>
                     <th scope="col" class="new-schema-td-th">Actions</th>
                 </tr>
                 </thead>
@@ -33,14 +34,10 @@
                         <th scope="row" class="new-schema-td-th">{{ forloop.counter }}</th>
                         <td scope="col" class="new-schema-td-th"><a class="new-schema-href" href="#"
                                                                     style="color: #0275D8">{{ schema.name }}</a></td>
-                        <td class="new-schema-td-th">{{ schema.modified|date:"Y-m-d" }}</td>
+                        <td class="new-schema-td-th">{{ schema.created|date:"Y-m-d" }}</td>
                         <td class="new-schema-td-th">
                             <div class="row">
-                                <div class="col-4"><a class="new-schema-href" href="#" style="color: #0275D8">Edit
-                                    scheme</a></div>
-                                <div class="col-5"><a class="new-schema-href" href="{% url 'delete_schema' schema.pk %}"
-                                                      style="color: #D9534F">Delete</a>
-                                </div>
+                                <div class="col-4"><a class="new-schema-href" href="#" style="color: #0275D8">Download</a></div>
                             </div>
                         </td>
 
